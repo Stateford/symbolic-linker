@@ -4,3 +4,5 @@ release/
 x64/
 bin/
 obj/
+*.vcxproj.*
+*.cjproj.*
