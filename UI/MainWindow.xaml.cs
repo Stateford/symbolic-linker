@@ -26,7 +26,11 @@ namespace UI
             InitializeComponent();
         }
 
-        private string get_path()
+        /// <summary>
+        /// Opens a folder browser and returns the path
+        /// </summary>
+        /// <returns>file path</returns>
+        private string Get_path()
         {
             using (var openFileDialog = new FolderBrowserDialog())
             {
@@ -38,17 +42,27 @@ namespace UI
             }
         }
 
+        /// <summary>
+        /// Get the path when the button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BTN_PATH_Click(object sender, RoutedEventArgs e)
         {
-            var path = get_path();
+            var path = Get_path();
 
             if(path != null)
                 TXT_PATH.Text = path;
         }
 
+        /// <summary>
+        /// Get the target path when the button is clicked
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BTN_TARGET_Click(object sender, RoutedEventArgs e)
         {
-            var path = get_path();
+            var path = Get_path();
 
             if (path != null)
                 TXT_TARGET.Text = path;
