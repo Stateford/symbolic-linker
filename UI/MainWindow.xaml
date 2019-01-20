@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <TextBox x:Name="TXT_PATH" HorizontalAlignment="Left" Height="23" Margin="110,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.208,0.435"/>
+        <Button x:Name="BTN_PATH" Content="..." HorizontalAlignment="Left" Margin="235,90,0,0" VerticalAlignment="Top" Width="20" Click="BTN_PATH_Click" Height="23" RenderTransformOrigin="8.5,2.565"/>
+        <TextBox x:Name="TXT_TARGET_Copy" HorizontalAlignment="Left" Height="23" Margin="295,90,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.208,0.435"/>
+        <Button x:Name="BTN_TARGET_Copy" Content="..." HorizontalAlignment="Left" Margin="420,90,0,0" VerticalAlignment="Top" Width="20" Click="BTN_PATH_Click" Height="23" RenderTransformOrigin="8.5,2.565"/>
+
     </Grid>
 </Window>

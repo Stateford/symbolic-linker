@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace UI
 {
@@ -23,6 +24,19 @@ namespace UI
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BTN_PATH_Click(object sender, RoutedEventArgs e)
+        {
+            var openFileDialog = new OpenFileDialog();
+            openFileDialog.CheckFileExists = false;
+
+            var result = openFileDialog.ShowDialog();
+
+            if(result == true)
+            {
+                TXT_PATH.Text = openFileDialog.FileName;
+            }
         }
     }
 }
