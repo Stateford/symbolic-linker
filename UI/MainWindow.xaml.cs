@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Microsoft.Win32;
+using System.Windows.Forms;
 
 namespace UI
 {
@@ -26,17 +26,32 @@ namespace UI
             InitializeComponent();
         }
 
+        private string get_path()
+        {
+            using (var openFileDialog = new FolderBrowserDialog())
+            {
+                var result = openFileDialog.ShowDialog();
+                if (result == System.Windows.Forms.DialogResult.OK)
+                    return openFileDialog.SelectedPath;
+
+                return null;
+            }
+        }
+
         private void BTN_PATH_Click(object sender, RoutedEventArgs e)
         {
-            var openFileDialog = new OpenFileDialog();
-            openFileDialog.CheckFileExists = false;
+            var path = get_path();
 
-            var result = openFileDialog.ShowDialog();
+            if(path != null)
+                TXT_PATH.Text = path;
+        }
 
-            if(result == true)
-            {
-                TXT_PATH.Text = openFileDialog.FileName;
-            }
+        private void BTN_TARGET_Click(object sender, RoutedEventArgs e)
+        {
+            var path = get_path();
+
+            if (path != null)
+                TXT_TARGET.Text = path;
         }
     }
 }
