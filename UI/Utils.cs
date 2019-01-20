@@ -9,18 +9,15 @@ namespace UI
 {
     public class Utils
     {
+        /// <summary>
+        /// Check that path exists
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         public static bool VerifyPath(string path)
         {
-            try
-            {
-                Path.GetFullPath(path);
-            }
-            catch
-            {
-                return false;
-            }
-
-            return Path.IsPathRooted(path);
+            var fullPath = Path.GetFullPath(path);
+            return Directory.Exists(fullPath);
         }
     }
 }

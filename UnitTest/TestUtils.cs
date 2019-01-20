@@ -6,13 +6,19 @@ using UI;
 namespace UnitTest
 {
     [TestClass]
-    public class TestUtils
+    public class TestUtilsVerifyPath
     {
         [TestMethod]
-        public void TestVerifyPath()
+        public void TestValidDirectory()
         {
             var dir = Directory.GetCurrentDirectory();
             Assert.IsTrue(Utils.VerifyPath(dir));
+        }
+
+        [TestMethod]
+        public void TestInvalidDirectory()
+        {
+            Assert.IsFalse(Utils.VerifyPath("/foo"));
         }
     }
 }
